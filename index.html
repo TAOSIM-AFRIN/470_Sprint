@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codetoria Cafeteria</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>Codetoria Cafeteria</h1>
+            <ul>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#order">Order</a></li>
+                <li><a href="#reservation">Reservation</a></li>
+                <li><a href="#feedback">Feedback</a></li>
+                <li><a href="#admin">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Menu Section -->
+        <section id="menu">
+            <h2>Our Menu</h2>
+            <div id="menu-list"></div>
+        </section>
+
+        <!-- Order Section -->
+        <section id="order">
+            <h2>Place Your Order</h2>
+            <form id="order-form">
+                <label for="item">Item Name:</label>
+                <input type="text" id="item" name="item" required>
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" min="1" required>
+                <label for="custom">Customization:</label>
+                <input type="text" id="custom" name="custom">
+                <button type="submit">Order Now</button>
+            </form>
+        </section>
+
+        <!-- QR Code Scan Section -->
+        <section id="qr">
+            <h2>Scan QR for Quick Access</h2>
+            <button onclick="scanQR()">Scan QR Code</button>
+        </section>
+
+        <!-- Reservation Section -->
+        <section id="reservation">
+            <h2>Reserve a Table</h2>
+            <form id="reservation-form">
+                <input type="date" name="date" required>
+                <input type="time" name="time" required>
+                <button type="submit">Reserve</button>
+            </form>
+        </section>
+
+        <!-- Payment Section -->
+        <section id="payment">
+            <h2>Make a Payment</h2>
+            <form id="payment-form">
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" name="amount" required>
+                <button type="submit">Pay</button>
+            </form>
+        </section>
+
+        <!-- Discount Section -->
+        <section id="discount">
+            <h2>Available Discounts</h2>
+            <p>Use code <strong>WELCOME10</strong> for 10% off!</p>
+        </section>
+
+        <!-- Rating Section -->
+        <section id="rating">
+            <h2>Rate Your Food</h2>
+            <form id="rating-form">
+                <input type="text" name="item" placeholder="Item Name" required>
+                <input type="number" name="point" min="1" max="5" required>
+                <textarea name="comment" placeholder="Leave a comment..."></textarea>
+                <button type="submit">Submit Rating</button>
+            </form>
+        </section>
+
+        <!-- Feedback Section -->
+        <section id="feedback">
+            <h2>Customer Feedback</h2>
+            <form id="feedback-form">
+                <textarea name="feedback" placeholder="Your feedback..." required></textarea>
+                <button type="submit">Submit Feedback</button>
+            </form>
+        </section>
+
+        <!-- Admin Section -->
+        <section id="admin">
+            <h2>Admin Panel</h2>
+            <button onclick="addUser()">Add User</button>
+            <button onclick="editMenu()">Edit Menu</button>
+            <button onclick="monitorOrders()">Monitor Orders</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Codetoria Cafeteria. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+<!-- styles.css -->
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+}
+
+nav ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 2rem;
+}
+
+section {
+    background-color: white;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+input, textarea, button {
+    display: block;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: white;
+}
+</style>
+
+<!-- script.js -->
+<script>
+function scanQR() {
+    alert("QR scan feature not available in browser preview.");
+}
+
+function addUser() {
+    alert("Admin: Add user functionality.");
+}
+
+function editMenu() {
+    alert("Admin: Edit menu functionality.");
+}
+
+function monitorOrders() {
+    alert("Admin: Monitor orders functionality.");
+}
+
+document.getElementById("order-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("Order submitted!");
+});
+
+document.getElementById("reservation-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("Reservation successful!");
+});
+
+document.getElementById("payment-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("Payment processed!");
+});
+
+document.getElementById("rating-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("Rating submitted!");
+});
+
+document.getElementById("feedback-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("Feedback received!");
+});
+</script>
