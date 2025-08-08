@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Restaurant Management Dashboard</h1>
+
+        <!-- User Management Section -->
+        <section class="card">
+            <h2>User Management</h2>
+            <form id="addUserForm">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <button type="submit">Add User</button>
+            </form>
+            <div id="userList"></div>
+        </section>
+
+        <!-- Menu Management Section -->
+        <section class="card">
+            <h2>Menu Management</h2>
+            <form id="addMenuForm">
+                <input type="text" id="menuName" placeholder="Item Name" required>
+                <input type="number" id="menuPrice" placeholder="Price" step="0.01" required>
+                <textarea id="menuIngredients" placeholder="Ingredients"></textarea>
+                <button type="submit">Add Menu Item</button>
+            </form>
+            <div id="menuList"></div>
+        </section>
+
+        <!-- Order & Payment Section -->
+        <section class="card">
+            <h2>Order & Payment</h2>
+            <form id="createOrderForm">
+                <p>Order Items: (Menu Item ID, Quantity)</p>
+                <div id="orderItems">
+                    <div class="order-item-group">
+                        <input type="number" class="menu-item-id" placeholder="Menu Item ID" required>
+                        <input type="number" class="quantity" placeholder="Quantity" required>
+                    </div>
+                </div>
+                <button type="button" id="addOrderItemBtn">Add Another Item</button>
+                <button type="submit">Create Order</button>
+            </form>
+            <div id="orderStatus"></div>
+            
+            <form id="processPaymentForm" style="display:none;">
+                <h3>Process Payment</h3>
+                <input type="number" id="paymentOrderId" placeholder="Order ID" required readonly>
+                <input type="number" id="paymentAmount" placeholder="Amount" step="0.01" required readonly>
+                <input type="text" id="discountCode" placeholder="Discount Code (Optional)">
+                <button type="submit">Pay Now</button>
+            </form>
+        </section>
+
+        <!-- Reservation Section -->
+        <section class="card">
+            <h2>Table Reservation</h2>
+            <form id="reserveForm">
+                <input type="date" id="reserveDate" required>
+                <input type="time" id="reserveTime" required>
+                <button type="submit">Make Reservation</button>
+            </form>
+            <div id="reservationStatus"></div>
+        </section>
+
+        <!-- Rating & Feedback Section -->
+        <section class="card">
+            <h2>Ratings & Feedback</h2>
+            <form id="submitRatingForm">
+                <h3>Submit Rating</h3>
+                <input type="number" id="ratingMenuItemId" placeholder="Menu Item ID" required>
+                <input type="number" id="ratingPoint" placeholder="Rating (1-5)" min="1" max="5" required>
+                <textarea id="ratingComment" placeholder="Comment"></textarea>
+                <button type="submit">Submit Rating</button>
+            </form>
+
+            <form id="submitFeedbackForm">
+                <h3>Submit Feedback</h3>
+                <textarea id="feedbackText" placeholder="Your feedback..." required></textarea>
+                <button type="submit">Submit Feedback</button>
+            </form>
+        </section>
+        
+        <!-- QR Scanning Section -->
+        <section class="card">
+            <h2>QR Scanner</h2>
+            <input type="text" id="qrCodeInput" placeholder="Enter QR code string">
+            <button id="scanQrBtn">Scan QR Code</button>
+            <div id="qrStatus"></div>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
